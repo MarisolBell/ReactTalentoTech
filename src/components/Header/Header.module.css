@@ -1,0 +1,27 @@
+/* Header.module.css */
+
+.header {
+  background-color: var(--blackground-color);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 150px; /* Tamaño del logo en pantallas grandes */
+  height: auto;
+}
+
+/* Media query para móviles (menos de 768px de ancho) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Apila el logo y la navegación */
+    gap: 10px; /* Espacio entre el logo y la navegación */
+  }
+
+  .header img {
+    width: 100px; /* Reduce el tamaño del logo en móviles */
+  }
+}

@@ -1,0 +1,38 @@
+/* Nav.module.css */
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--color-gris-claro);
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--acent-color);
+}
+
+/* Media query para móviles (menos de 768px de ancho) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navList {
+    flex-direction: column; /* Apila los enlaces */
+    align-items: center;
+    gap: 10px;
+  }
+}

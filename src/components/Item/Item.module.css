@@ -1,0 +1,52 @@
+/* Item.module.css */
+
+.itemCard {
+  width: 250px; /* Mantén un ancho base para pantallas grandes */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.itemCard:hover {
+  transform: translateY(-5px);
+}
+
+.itemImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.itemContent {
+  padding: 15px;
+  text-align: center;
+}
+
+.itemCard h2 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: var(--color-black);
+}
+
+.itemCard h3 {
+  font-size: 1.1em;
+  color: var(--color-maiz);
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.9em;
+  color: var(--color-black);
+}
+
+/* Media query para móviles (menos de 768px de ancho) */
+@media (max-width: 768px) {
+  .itemCard {
+    width: 90%; /* Ocupa casi todo el ancho disponible */
+  }
+}
