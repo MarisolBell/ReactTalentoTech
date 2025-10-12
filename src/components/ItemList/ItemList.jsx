@@ -1,7 +1,7 @@
 import Item from "../Item/Item";
-import listStyles from "./ItemList.module.css";   //  estilos del contenedor (flex)
-import itemStyles from "../Item/Item.module.css"; //  estilos de los botones
-
+import listStyles from "./ItemList.module.css";   // estilos del contenedor (flex)
+import itemStyles from "../Item/Item.module.css"; // estilos de los botones
+import { Link } from "react-router-dom";
 
 const ItemList = ({ lista }) => {
   return (
@@ -10,13 +10,12 @@ const ItemList = ({ lista }) => {
         lista.map((producto) => (
           <Item key={producto.id} {...producto}>
             <div className={itemStyles.buttonContainer}>
-              <button
+              <Link
+                to={`/detail/${producto.id}`}
                 className={`${itemStyles.buttonBase} ${itemStyles.btnBlack}`}
-                onClick={() => console.log(`Ver más de ${producto.name}`)}
               >
                 Ver más
-      
-              </button>
+              </Link>
             </div>
           </Item>
         ))

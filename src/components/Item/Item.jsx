@@ -1,6 +1,6 @@
 import styles from './Item.module.css';
 
-const Item = ({ name, images, description,price,children }) => {
+const Item = ({name, images, description,price,children }) => {
   return (
     <article className={styles.itemCard}> 
       {images && images.length > 0 && (

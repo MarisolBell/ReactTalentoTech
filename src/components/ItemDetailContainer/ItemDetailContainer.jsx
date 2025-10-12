@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import ItemDetail  from "../ItemDetail/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
-  const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
+  const { id } = useParams();
 
   useEffect(() => {
     fetch("/data/products.json")
@@ -15,8 +17,8 @@ import ItemDetail  from "../ItemDetail/ItemDetail";
       })
       .then((data) => {
         console.log("Productos:", data);
-        const found = data.find((p) => p.id === "3");
-         console.log("Producto encontrado:", found);
+        const found = data.find((p) => p.id === id);
+        console.log("Producto encontrado:", found);
         if (found) {
           setDetail(found);
         } else {
@@ -26,7 +28,7 @@ import ItemDetail  from "../ItemDetail/ItemDetail";
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
   return (
     <main>
