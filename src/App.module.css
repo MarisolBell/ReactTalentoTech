@@ -1,5 +1,3 @@
-/* App.module.css */
-
 /* Restablecimiento de estilos global */
 * {
   padding: 0;
@@ -8,16 +6,7 @@
 }
 
 /* Variables de color */
-:root { 
-  --color-maiz: #d1bc7e; 
-  --acent-color:#f8c22e;
-  --color-white: rgba(255, 255, 255, 0.929); 
-  --color-blanco-crema: #F5F5DC; 
-  --color-gris-claro: #D3D3D3; 
-  --color-black:rgb(26, 25, 25);
-  --blackground-color: #A3B18A;; 
 
-}
 :root { 
   --color-maiz: #d1bc7e; /* Dorado suave, ideal para detalles e íconos */
   --acent-color: #f8c22e; /* Amarillo vibrante para botones y llamadas a la acción */
