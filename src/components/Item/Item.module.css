@@ -44,6 +44,48 @@
   color: var(--color-black);
 }
 
+/* === ESTILOS DE BOTONES NEGROS === */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón negro con texto blanco */
+.btnBlack {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btnBlack:hover {
+  background-color: var(--color-maiz);
+  color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+/* Ajuste de íconos */
+.icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
 /* Media query para móviles (menos de 768px de ancho) */
 @media (max-width: 768px) {
   .itemCard {

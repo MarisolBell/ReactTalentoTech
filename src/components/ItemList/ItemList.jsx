@@ -1,13 +1,23 @@
 import Item from "../Item/Item";
-import styles from "./ItemList.module.css";
+import listStyles from "./ItemList.module.css";   //  estilos del contenedor (flex)
+import itemStyles from "../Item/Item.module.css"; //  estilos de los botones
+
 
 const ItemList = ({ lista }) => {
   return (
-    <div className={styles["productos-container"]}>
+    <div className={listStyles["productos-container"]}>
       {lista.length ? (
         lista.map((producto) => (
           <Item key={producto.id} {...producto}>
-            <button>Ver Más</button>
+            <div className={itemStyles.buttonContainer}>
+              <button
+                className={`${itemStyles.buttonBase} ${itemStyles.btnBlack}`}
+                onClick={() => console.log(`Ver más de ${producto.name}`)}
+              >
+                Ver más
+      
+              </button>
+            </div>
           </Item>
         ))
       ) : (
