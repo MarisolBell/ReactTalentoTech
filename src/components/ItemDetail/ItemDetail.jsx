@@ -1,7 +1,7 @@
 import Item from "../Item/Item";
 import styles from "../Item/Item.module.css";
 import { FiShoppingCart } from "react-icons/fi"; 
-import { useCartContext } from "../../context/CartContext/UseCartContext";
+import { useCartContext } from "../../context/CartContext/useCartContext";
 
 const ItemDetail = ({ detail }) => {
   const { name, description, images, price } = detail;

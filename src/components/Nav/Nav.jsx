@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { FiShoppingCart } from "react-icons/fi";
-import { useCartContext } from "../../context/CartContext/UseCartContext";
+import { useCartContext } from "../../context/CartContext/useCartContext";
+
 
 const Nav = () => {
   const { getTotalItems } = useCartContext();
