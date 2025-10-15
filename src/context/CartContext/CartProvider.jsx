@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item) => {
     if (exists(item.id)){
-        alert(`${item.name} ya existe en elcarrito `);
+        alert(`${item.name} ya existe en el carrito `);
         return;
     }
     setCart([...cart, item]);

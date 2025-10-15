@@ -8,7 +8,7 @@ const ItemDetail = ({ detail }) => {
   const { addItem } = useCartContext(); 
 
   return (
-    // 🆕 CAMBIO IMPORTANTE: Agregamos la clase detailCard al artículo
+   
     <article className={`${styles.itemCard} ${styles.detailCard}`}>
       {images && images.length > 0 && (
         <img src={images[0]} alt={name} className={styles.itemImage} />
@@ -16,7 +16,6 @@ const ItemDetail = ({ detail }) => {
       <div className={styles.itemContent}>
         <h2>{name}</h2>
         <h3>Precio: ${price}</h3>
-        {/* 🆕 Mostramos la descripción directamente aquí */}
         <p>{description}</p>
 
         <div className={styles.buttonContainer}>
