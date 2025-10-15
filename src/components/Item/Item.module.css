@@ -1,7 +1,5 @@
-/* Item.module.css */
-
 .itemCard {
-  width: 250px; /* Mantén un ancho base para pantallas grandes */
+  width: 250px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,9 +85,114 @@
   align-items: center;
 }
 
+/* ========================================= */
+/*  ESTILOS PARA LA VISTA DE DETALLE */
+/* ========================================= */
+.detailCard {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto; 
+  border-radius: 12px; 
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in; 
+}
+
+/*  Animación de aparición suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Imagen más grande en vista detalle */
+.detailCard .itemImage {
+  height: 250px; 
+  object-fit: contain; 
+  background-color: var(--color-white);
+  padding: 20px;
+}
+
+/* Contenido más espacioso en detalle */
+.detailCard .itemContent {
+  padding: 25px; 
+}
+
+
+.detailCard h2 {
+  font-size: 1.5em; 
+  margin-bottom: 12px;
+  color: var(--color-black);
+}
+
+.detailCard h3 {
+  font-size: 1.3em; 
+  color: var(--color-maiz);
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+
+.detailCard p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--color-black);
+  margin-bottom: 20px;
+  text-align: left; 
+}
+
+
+.detailCard .buttonBase {
+  padding: 12px 24px; 
+  font-size: 0.98rem; 
+  width: 100%; 
+  max-width: 280px; 
+}
+
 /* Media query para móviles (menos de 768px de ancho) */
 @media (max-width: 768px) {
   .itemCard {
-    width: 90%; /* Ocupa casi todo el ancho disponible */
+    width: 90%;
+  }
+
+ 
+  .detailCard {
+    max-width: 95%;
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+
+  .detailCard .itemImage {
+    height: 300px;
+    padding: 15px;
+  }
+
+  .detailCard .itemContent {
+    padding: 20px;
+  }
+
+  .detailCard h2 {
+    font-size: 1.6em;
+  }
+
+  .detailCard h3 {
+    font-size: 1.4em;
+  }
+
+  .detailCard p {
+    font-size: 1em;
+  }
+
+  .detailCard .buttonBase {
+    font-size: 1rem;
+    padding: 12px 24px;
   }
 }

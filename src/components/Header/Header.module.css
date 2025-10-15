@@ -2,7 +2,7 @@
 
 .header {
   background-color: var(--blackground-color);
-  color: white;
+  color: var(--color-white);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -22,6 +22,6 @@
   }
 
   .header img {
-    width: 100px; /* Reduce el tamaño del logo en móviles */
+    width: 130px; /* Reduce el tamaño del logo en móviles */
   }
 }
