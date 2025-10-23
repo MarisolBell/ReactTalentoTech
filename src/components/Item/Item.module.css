@@ -37,12 +37,12 @@
   margin-bottom: 10px;
 }
 
-.description {
+.description  {
   font-size: 0.9em;
   color: var(--color-black);
 }
 
-/* === ESTILOS DE BOTONES NEGROS === */
+/* === ESTILOS DE BOTONES === */
 .buttonContainer {
   display: flex;
   justify-content: center;
@@ -78,6 +78,21 @@
   transform: translateY(-2px);
 }
 
+/* Botón verde - NUEVO */
+.btnGreen {
+  background-color: var(--color-maiz);
+  color: var(--color-black);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+}
+
+.btnGreen:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
 /* Ajuste de íconos */
 .icon {
   font-size: 1.1rem;
@@ -90,7 +105,7 @@
 /* ========================================= */
 .detailCard {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   margin: 40px auto; 
   border-radius: 12px; 
   overflow: hidden;
@@ -101,7 +116,7 @@
   animation: fadeIn 0.5s ease-in; 
 }
 
-/*  Animación de aparición suave */
+/* Animación de aparición suave */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -113,7 +128,7 @@
   }
 }
 
-/*  Imagen más grande en vista detalle */
+/* Imagen más grande en vista detalle */
 .detailCard .itemImage {
   height: 250px; 
   object-fit: contain; 
@@ -123,38 +138,51 @@
 
 /* Contenido más espacioso en detalle */
 .detailCard .itemContent {
-  padding: 25px; 
+  padding: 30px; 
 }
 
-
 .detailCard h2 {
-  font-size: 1.5em; 
-  margin-bottom: 12px;
+  font-size: 1.8em; 
+  margin-bottom: 15px;
   color: var(--color-black);
+  font-weight: 700;
 }
 
 .detailCard h3 {
-  font-size: 1.3em; 
+  font-size: 1.5em; 
   color: var(--color-maiz);
-  margin-bottom: 18px;
+  margin-bottom: 25px;
   font-weight: bold;
 }
 
-
-.detailCard p {
-  font-size: 0.95em;
-  line-height: 1.6;
+/* Descripción centrada y con mejor diseño - MEJORADO */
+.detailDescription {
+  font-size: 1rem;
+  line-height: 1.8;
   color: var(--color-black);
-  margin-bottom: 20px;
-  text-align: left; 
+  margin-bottom: 25px;
+  text-align: center; /* Centrado */
+  max-width: 600px; /* Ancho máximo para mejor lectura */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
 }
 
+/* Contenedor de botones en detalle - NUEVO */
+.detailButtonsContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Cambiado de flex-start a center */
+  justify-content: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
 
 .detailCard .buttonBase {
   padding: 12px 24px; 
-  font-size: 0.98rem; 
-  width: 100%; 
-  max-width: 280px; 
+  font-size: 1rem; 
+  min-width: 180px;
+  flex-shrink: 0;
 }
 
 /* Media query para móviles (menos de 768px de ancho) */
@@ -163,7 +191,6 @@
     width: 90%;
   }
 
- 
   .detailCard {
     max-width: 95%;
     margin: 20px auto;
@@ -187,12 +214,18 @@
     font-size: 1.4em;
   }
 
-  .detailCard p {
-    font-size: 1em;
+  .detailDescription {
+    font-size: 0.95em;
+    padding: 12px;
+  }
+
+  .detailButtonsContainer {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .detailCard .buttonBase {
-    font-size: 1rem;
-    padding: 12px 24px;
+    width: 100%;
+    min-width: auto;
   }
 }

@@ -23,6 +23,7 @@ function App() {
                 }
               />
               <Route path="/detail/:id" element={<ItemDetailContainer />} />
+              <Route path="/carrito" element={<h1>Carrito de compras</h1>}/>
             </Routes>
             <Footer />
           </div>
