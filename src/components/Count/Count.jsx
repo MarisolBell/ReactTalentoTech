@@ -10,15 +10,15 @@ const Count = ({
   showBackButton = false,
   onBack
 }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const increment = () => setCount((prev) => prev + 1);
-  const decrement = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  const decrement = () => setCount((prev) => (prev > 1 ? prev - 1 : 1));
 
   const handleConfirm = () => {
     if (count > 0) {
       onConfirm(count);
-      setCount(0);
+      setCount(1); // Resetea a 1 después de confirmar
     }
   };
 
@@ -29,7 +29,7 @@ const Count = ({
         <button
           onClick={decrement}
           className={styles.btn}
-          disabled={count === 0}
+          disabled={count === 1}
         >
           −
         </button>

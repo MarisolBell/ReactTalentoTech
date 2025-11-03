@@ -1,0 +1,338 @@
+/* === Contenedor Principal del Carrito === */
+.cartContainer {
+  width: 95%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--color-blanco-crema);
+  border-radius: 12px;
+  min-height: 50vh;
+}
+
+.cartTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--color-maiz);
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* === Estilo para cada Ítem en el Carrito === */
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  gap: 15px;
+}
+
+.cartItem:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido del ítem */
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  min-width: 0; /* Permite que el texto se ajuste */
+}
+
+/* Imagen del producto */
+.cartItemImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-maiz);
+  flex-shrink: 0;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.itemDetails h2 {
+  font-size: 1.15rem;
+  color: var(--color-black);
+  margin: 0;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemDetails p {
+  font-size: 1rem;
+  color: var(--color-maiz);
+  margin: 0;
+  font-weight: 700;
+}
+
+.itemQuantity {
+  font-size: 1.1rem;
+  color: var(--color-black);
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+  flex-shrink: 0;
+  padding: 5px 15px;
+  background-color: var(--color-blanco-crema);
+  border-radius: 6px;
+}
+
+/* === Controles y Total del Carrito === */
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 20px;
+  background-color: var(--color-white);
+  border-top: 2px dashed var(--color-gris-claro);
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cartTotal {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--acent-color);
+  margin-bottom: 10px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* === Botón Base y Variantes === */
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Botón Finalizar Compra */
+.btnCheckout {
+  background-color: var(--acent-color);
+  color: var(--color-black);
+  box-shadow: 0 4px 10px rgba(248, 194, 46, 0.4);
+  font-weight: 700;
+}
+
+.btnCheckout:hover {
+  background-color: #e0b029;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(248, 194, 46, 0.5);
+}
+
+/* Botón Seguir Comprando */
+.btnContinueShopping {
+  background-color: var(--color-maiz);
+  color: var(--color-black);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+.btnContinueShopping:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Botones de Eliminar */
+.btnClear,
+.btnRemoveItem {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btnClear:hover,
+.btnRemoveItem:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btnRemoveItem {
+  min-width: 140px;
+  padding: 10px 18px;
+}
+
+/* === Botón de Volver === */
+.backButton {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 2px solid var(--color-maiz);
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.backButton:hover {
+  background-color: var(--color-maiz);
+  color: var(--color-white);
+  transform: translateX(-5px);
+}
+
+/* === Carrito Vacío === */
+.emptyCartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 30px;
+}
+
+.cartEmpty {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .cartContainer {
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .cartTitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .itemInfo {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .cartItemImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .itemDetails h2 {
+    font-size: 1.05rem;
+  }
+
+  .itemDetails p {
+    font-size: 0.95rem;
+  }
+
+  .itemQuantity {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    padding: 8px 12px;
+  }
+  
+  .btnRemoveItem {
+    width: 100%;
+    min-width: 100%;
+    margin-top: 8px;
+  }
+
+  .cartSummary {
+    padding: 20px 15px;
+  }
+
+  .cartTotal {
+    font-size: 1.7rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .buttonBase {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .backButton {
+    align-self: center;
+    width: fit-content;
+  }
+
+  .emptyCartContainer {
+    padding: 40px 20px;
+    gap: 25px;
+  }
+
+  .cartEmpty {
+    font-size: 1.3rem;
+  }
+}
+
+/* === Responsive para tablets === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cartItem {
+    padding: 15px;
+  }
+
+  .buttonGroup {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .buttonBase {
+    min-width: 160px;
+    flex: 1 1 calc(50% - 10px);
+    max-width: 250px;
+  }
+
+  .btnCheckout {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

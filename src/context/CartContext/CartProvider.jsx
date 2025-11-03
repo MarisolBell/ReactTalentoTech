@@ -54,9 +54,17 @@ export const CartProvider = ({ children }) => {
     const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0);
     return Math.round(total * 100) / 100; // redondea a 2 decimales
   };
+  
+  const checkout = () =>{
+    const ok= confirm ("Esta seguro que quiere realizar la compra?");
+    if(ok){
+      alert ("Compra realizada con exito");
+      clearCart();
+    }
+  };
 
   //  Valores y funciones que se comparten mediante el contexto
-  const values = { cart, addItem, clearCart, getTotalItems, deleteItem, total };
+  const values = { cart, addItem, clearCart, getTotalItems, deleteItem, total , checkout };
 
   return (
     <CartContext.Provider value={values}>

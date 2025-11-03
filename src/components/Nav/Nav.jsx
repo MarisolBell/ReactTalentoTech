@@ -10,6 +10,11 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navList}>
+         <li>
+          <Link to="/" className={styles.navLink}>
+            Home
+          </Link>
+        </li>
         <li>
           <Link to="/category/pulseras" className={styles.navLink}>
             Pulseras
