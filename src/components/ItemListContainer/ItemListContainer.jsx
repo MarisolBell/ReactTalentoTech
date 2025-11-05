@@ -1,14 +1,61 @@
-import {useState, useEffect } from "react";
+// import {useState, useEffect } from "react";
+// import ItemList from "../ItemList/ItemList";
+// import styles from "./ItemListContainer.module.css";
+// import { useParams } from "react-router-dom";
+
+// const ItemListContainer = ({ titulo }) => {
+//   const [products, setProducts] = useState([]);
+//   const {category} = useParams();
+
+//   useEffect(() => {
+//     fetch("/data/products.json")
+//       .then((res) => {
+//         if (!res.ok) {
+//           throw new Error("No se pudo obtener la lista de productos. Intente nuevamente más tarde.");
+//         }
+//         return res.json();
+//       })
+//       .then((data) => {
+//         if (category){
+//           setProducts(data.filter((prod) => prod.category === category));
+//         } else{
+//            setProducts(data);
+//         }
+       
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   }, [category]);
+
+//   //llamada a una API
+//   return (
+//     <section>
+//       <h1 className={styles["titulo-principal"]}>{titulo}</h1>
+//       <ItemList lista={products} />
+//     </section>
+//   );
+// };
+
+// export default ItemListContainer;
+import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import styles from "./ItemListContainer.module.css";
 import { useParams } from "react-router-dom";
 
+const BASE_URL = "https://6902bd07b208b24affe70b66.mockapi.io/products";
+
 const ItemListContainer = ({ titulo }) => {
   const [products, setProducts] = useState([]);
-  const {category} = useParams();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { category } = useParams();
 
   useEffect(() => {
-    fetch("/data/products.json")
+    setLoading(true);
+    setError(null);
+
+    fetch(BASE_URL)
       .then((res) => {
         if (!res.ok) {
           throw new Error("No se pudo obtener la lista de productos. Intente nuevamente más tarde.");
@@ -16,19 +63,28 @@ const ItemListContainer = ({ titulo }) => {
         return res.json();
       })
       .then((data) => {
-        if (category){
+        if (category) {
           setProducts(data.filter((prod) => prod.category === category));
-        } else{
-           setProducts(data);
+        } else {
+          setProducts(data);
         }
-       
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
+        setError(err.message);
+        setLoading(false);
       });
   }, [category]);
 
-  //llamada a una API
+  if (loading) {
+    return <div className={styles.loading}>Cargando productos...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>;
+  }
+
   return (
     <section>
       <h1 className={styles["titulo-principal"]}>{titulo}</h1>

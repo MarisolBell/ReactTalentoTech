@@ -19,8 +19,8 @@ const ItemDetail = ({ detail }) => {
 
   return (
     <article className={`${styles.itemCard} ${styles.detailCard}`}>
-      {images && images.length > 0 && (
-        <img src={images[0]} alt={name} className={styles.itemImage} />
+      {images &&(
+        <img src={images} alt={name} className={styles.itemImage} />
       )}
       <div className={styles.itemContent}>
         <h2>{name}</h2>
@@ -40,4 +40,4 @@ const ItemDetail = ({ detail }) => {
   );
 };
 
-export default ItemDetail;
+export default ItemDetail;  
