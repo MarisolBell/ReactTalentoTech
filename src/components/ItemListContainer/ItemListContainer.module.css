@@ -1,8 +1,54 @@
-.titulo-principal {
+/* .titulo-principal {
   text-align: center;
   font-size: 1.8rem;
   margin: 40px 0;
   color: var(--color-maiz);
   font-weight: bolder;
   letter-spacing: 2px;
+} */
+
+.titulo-principal {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 40px 0;
+  color: var(--color-maiz);
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  color: var(--color-gris-claro);
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 1.8rem;
+    margin: 25px 15px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-principal {
+    font-size: 1.5rem;
+    margin: 20px 10px;
+  }
+  
+  .loading,
+  .error {
+    font-size: 1rem;
+    padding: 30px 15px;
+  }
 }

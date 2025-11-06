@@ -22,6 +22,6 @@
   }
 
   .header img {
-    width: 130px; /* Reduce el tamaño del logo en móviles */
+    width: 150px; /* Reduce el tamaño del logo en móviles */
   }
 }

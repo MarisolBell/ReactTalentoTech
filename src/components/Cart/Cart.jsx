@@ -35,9 +35,9 @@ const Cart = () => {
                     {cart.map((prod) => (
                         <div key={prod.id} className={styles.cartItem}>
                             
-                            {prod.images && prod.images.length > 0 && (
+                            {prod.images &&  (
                                 <img 
-                                    src={prod.images[0]} 
+                                    src={prod.images} 
                                     alt={prod.name} 
                                     className={styles.cartItemImage} 
                                     onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/70x70/D3D3D3/2E2E2E?text=Prod" }}

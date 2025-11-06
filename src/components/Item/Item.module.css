@@ -78,7 +78,7 @@
   transform: translateY(-2px);
 }
 
-/* Botón verde - NUEVO */
+/* Botón verde */
 .btnGreen {
   background-color: var(--color-maiz);
   color: var(--color-black);
@@ -161,18 +161,18 @@
   line-height: 1.8;
   color: var(--color-black);
   margin-bottom: 25px;
-  text-align: center; /* Centrado */
+  text-align: center; 
   max-width: 600px; /* Ancho máximo para mejor lectura */
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
 }
 
-/* Contenedor de botones en detalle - NUEVO */
+/* Contenedor de botones en detalle*/
 .detailButtonsContainer {
   display: flex;
   gap: 15px;
-  align-items: center; /* Cambiado de flex-start a center */
+  align-items: center; 
   justify-content: center;
   margin-top: 25px;
   flex-wrap: wrap;
@@ -188,7 +188,7 @@
 /* Media query para móviles (menos de 768px de ancho) */
 @media (max-width: 768px) {
   .itemCard {
-    width: 90%;
+    width: 80%;
   }
 
   .detailCard {
@@ -198,7 +198,7 @@
   }
 
   .detailCard .itemImage {
-    height: 300px;
+    height: 100px;
     padding: 15px;
   }
 
