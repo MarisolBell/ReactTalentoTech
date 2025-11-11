@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { CartContext } from "./CartContext";
+import { toast } from 'react-toastify';
+
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -23,11 +25,17 @@ export const CartProvider = ({ children }) => {
         }
       });
       setCart(updatedCart);
-      alert(`${item.name} agregado al carrito`);
+      toast.success(`✅ ${item.name} agregado al carrito`, {
+        position: "top-right",
+        autoClose: 2500,
+      });
     } else {
       // Si no existe, lo agrega al array del carrito
       setCart([...cart, item]);
-      alert(`${item.name} agregado al carrito`);
+      toast.success(`✅ ${item.name} agregado al carrito`, {
+        position: "top-right",
+        autoClose: 2500,
+      });
     }
   };
 
@@ -35,12 +43,21 @@ export const CartProvider = ({ children }) => {
   const deleteItem = (id) => {
     const filteredCart = cart.filter((p) => p.id !== id);
     setCart(filteredCart);
-    alert("Producto eliminado del carrito");
+    toast.info("🗑️ Producto eliminado del carrito", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   };
 
   //  Vaciar completamente el carrito
   const clearCart = () => {
-    setCart([]);
+    if (cart.length > 0) {
+      setCart([]);
+      toast.warning(" Carrito vaciado completamente", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    }
   };
 
   //  Obtener el total de productos en el carrito
@@ -54,17 +71,24 @@ export const CartProvider = ({ children }) => {
     const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0);
     return Math.round(total * 100) / 100; // redondea a 2 decimales
   };
-  
-  const checkout = () =>{
-    const ok= confirm ("Esta seguro que quiere realizar la compra?");
-    if(ok){
-      alert ("Compra realizada con exito");
+
+  const checkout = () => {
+    const ok = confirm("Esta seguro que quiere realizar la compra?");
+    if (ok) {
+      toast.success("🎉 ¡Compra realizada con éxito!", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       clearCart();
     }
   };
 
   //  Valores y funciones que se comparten mediante el contexto
-  const values = { cart, addItem, clearCart, getTotalItems, deleteItem, total , checkout };
+  const values = { cart, addItem, clearCart, getTotalItems, deleteItem, total, checkout };
 
   return (
     <CartContext.Provider value={values}>

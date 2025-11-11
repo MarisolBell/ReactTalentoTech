@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background-color: var(--color-blanco-crema);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* === Tarjeta del formulario === */
+.formBox {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Título === */
+.formBox h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--color-black);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* === Inputs === */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.inputGroup input {
+  padding: 10px 12px;
+  border: 1px solid var(--color-gris-claro);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--color-maiz);
+  box-shadow: 0 0 5px rgba(209, 188, 126, 0.4);
+}
+
+/* === Botones (heredan tu estilo existente) === */
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Usamos tu esquema existente */
+.btnBlack {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btnBlack:hover {
+  background-color: var(--color-maiz);
+  color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+/* === Pequeño detalle visual === */
+button:active {
+  transform: scale(0.98);
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .formBox {
+    padding: 1.5rem;
+  }
+
+  .formBox h2 {
+    font-size: 1.5rem;
+  }
+}
