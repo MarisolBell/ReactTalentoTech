@@ -7,29 +7,17 @@
 ![React Router](https://img.shields.io/badge/React_Router-7.9.4-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
----
-
-##  Tabla de Contenidos
-
-- [Características](#-características)
-- [Tecnologías](#️-tecnologías)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Instalación](#-instalación)
-- [Scripts Disponibles](#-scripts-disponibles)
-- [Uso](#-uso)
-- [Despliegue](#-despliegue)
-- [Licencia](#-licencia)
-- [Autor](#-autor)
-
----
 
 ## Características
 
 - **Catálogo de productos**: Visualización de accesorios femeninos con imágenes y detalles
 - **Vista detallada**: Página de detalle para cada producto con información completa
-- **Carrito de compras**: Sistema de carrito funcional con contador de items
+- **Filtrado por categorías**: Navegación por Pulseras, Cintos, Collares, Billeteras y Aros.
+- **Carrito de compras**: Sistema de carrito funcional con contador de items.Vista del carrito con los productos.
+-  **Contexto AuthContext de compras.**
+-  **Login simulado (admin, 1234).**
+-  **Ruta protegida al componente de alta de productos (ProductFormContainer).**
 - **Diseño responsive**: Optimizado para dispositivos móviles, tablets y desktop
-- **Filtrado por categorías**: Navegación por Pulseras, Cintos, Collares, Billeteras y Aros (Entrega final)
 -  **Rendimiento optimizado**: Construido con Vite para carga rápida
 - **Animaciones suaves**: Transiciones y efectos visuales modernos
 - **Navegación intuitiva**: Menú responsive con carrito flotante en móviles
@@ -175,6 +163,8 @@ Este proyecto está configurado para ser desplegado en **Vercel**.
 
 ### Despliegue Automático con Vercel
 
+
+
 1. **Conectar con GitHub**
 ```bash
 # Subir el código a GitHub
@@ -221,6 +211,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 **Marisol Belliard**
 
 - GitHub: https://github.com/MarisolBell
+- Despliegue en Vercel : https://react-talento-tech.vercel.app
 - Email: msolbelliard@gmail.com
 
 ---
